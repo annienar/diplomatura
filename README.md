@@ -1,6 +1,5 @@
 
-Diplomatura Desarrollo Web Full Stack
-¡Bienvenido/a al repositorio de las tareas para la Diplomatura Desarrollo Web Full Stack!
+¡Bienvenido/a al repositorio de mis tareas para la Diplomatura Desarrollo Web Full Stack!
 
 Descripción
 Este proyecto tiene como objetivo documentar mi proceso de aprendizaje en el área de desarrollo web full stack. Durante esta diplomatura, exploraré diversos aspectos del desarrollo web, desde el frontend hasta el backend, con el fin de adquirir las habilidades necesarias para crear aplicaciones web completas y funcionales.
