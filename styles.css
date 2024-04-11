@@ -18,9 +18,10 @@ h3{
 }
 
 .bodyText {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'roboto-condensed', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1em;
     color: #424242;
+    line-height: 1.5em;
 }
 
 li {
@@ -39,7 +40,15 @@ body {
     margin: 24px;
 }
 
-img {
+.headerImage {
     width: 100%;
     border-radius: 6px;
+    box-shadow: 0 2px 15px #212121
 }
+
+.perfil {
+    column-count: 2;
+    column-gap: 24px;
+    column-width;
+}
+
