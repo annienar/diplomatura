@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+@media (max-width:800px){
+
+	body {
+		color: #000;
+		background: #332F29;
+	}
+
+	#contenedor {
+		background: #8FA68E;
+
+
+	}
+	nav {
+		background: #FFCC66;
+		padding: 8px
+
+	}
+	ul {
+		list-style-type:none;
+	}
+	a {
+		color:#000;
+		text-decoration: none;
+		line-height: 2em;
+	}
+	section {
+		background: #F1F2C0;
+		padding: 8px; 
+	}
+	aside {
+		background: #CCC59E;
+		padding: 8px;
+	}
+}
