@@ -1,0 +1,163 @@
+/* Fonts Styles */
+    html {
+        font-size: 16px;
+    }
+    h1 {
+        font-family: 'Yeneva-One', 'Times New Roman', Times, serif;
+        font-size: 4em;
+        font-weight: 600;
+        line-height: 1em;
+        margin-bottom: 0.2em;
+        color: #40485E;
+        margin-top: 0px;
+    }
+    h2 {
+        font-family: 'Yeneva-One', 'Times New Roman', Times, serif;
+        font-size: 2em;
+        font-weight: 600;
+        line-height: 0.9em;
+        margin-bottom: 0.3em;
+    }
+    h4 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size:1.25em;
+        margin-top: 2.5em;
+        margin-bottom: 0em;
+        color: #975ADA;
+    }
+
+    p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1em;
+        color:#5F5A5A;
+    }
+
+    a {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1em;
+        color: #40485E;
+        text-decoration: none;
+    }
+
+    a:hover {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1em;
+        color: #40485E;
+        text-decoration: underline;
+        color: #975ADA;
+    }
+
+    a:active {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1em;
+        font-weight: 500;
+        color: #40485E;
+        text-decoration: underline;
+        color: #6325A7; 
+    }
+
+/* Color Styles */
+
+    .color-primary {
+        color: #975ADA;
+    }
+
+    .navBar {
+        background-color: #EBECEE;
+    }
+   
+    .body {
+        background-color: #ECEDEF;
+    }
+
+      
+
+/* Nav */
+
+.navBar-nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+}
+
+.navBar-nav li {
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    flex-direction: row;
+    padding:16px;
+}
+
+.navbar-brand img {
+    width: 291px;
+}
+
+/* Hero */
+
+
+/* About Me */
+
+.content-aboutMe {
+    margin-top: 40px;
+}
+
+/* Body */
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.content-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    margin: 0px;
+    padding: 0px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+
+
+
+/* Images */ 
+
+.hero-image, .aboutMe-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    margin-right: 0px;
+}
+
+.hero-image {
+    z-index: 2;
+}
+
+img {
+    width: 100%;
+    max-width: 500px;  
+    height: auto;
+}
+
+.image-aboutMe {
+    width: 50%;
+}
+
