@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transporte y Mayor Número</title>
+    <script>
+        function determinarTransporte(distancia) {
+            if (distancia <= 1000) {
+                return "pie";
+            } else if (distancia <= 10000) {
+                return "bicicleta";
+            } else if (distancia <= 30000) {
+                return "colectivo";
+            } else if (distancia <= 100000) {
+                return "auto";
+            } else {
+                return "avion";
+            }
+        }
+
+        function encontrarMayorNumero(numeros) {
+            if (numeros.length === 0) {
+                return "El array no debe estar vacío";
+            }
+            return Math.max(...numeros);
+        }
+
+        function calcularTransporte() {
+            const distancia = parseFloat(document.getElementById("distancia").value);
+            const resultadoTransporte = determinarTransporte(distancia);
+            document.getElementById("resultadoTransporte").textContent = `El medio de transporte apropiado para ${distancia} metros es: ${resultadoTransporte}`;
+        }
+
+        function calcularMayorNumero() {
+            const numeros = document.getElementById("numeros").value.split(",").map(Number);
+            const mayorNumero = encontrarMayorNumero(numeros);
+            document.getElementById("resultadoMayorNumero").textContent = `El mayor número es: ${mayorNumero}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Determinar Transporte y Mayor Número</h1>
+
+    <div>
+        <h2>Determinar Transporte</h2>
+        <label for="distancia">Distancia en metros:</label>
+        <input type="number" id="distancia">
+        <button onclick="calcularTransporte()">Calcular Transporte</button>
+        <p id="resultadoTransporte"></p>
+    </div>
+
+    <div>
+        <h2>Encontrar Mayor Número</h2>
+        <label for="numeros">Ingrese una lista de números separados por comas:</label>
+        <input type="text" id="numeros">
+        <button onclick="calcularMayorNumero()">Calcular Mayor Número</button>
+        <p id="resultadoMayorNumero"></p>
+    </div>
+</body>
+</html>
