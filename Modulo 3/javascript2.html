@@ -1,0 +1,219 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadrados de Colores</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cuadrados de Colores</title>
+        <style>
+
+            .cuadros {
+                width: 550px;
+                margin: 40px;
+                padding-bottom: 24px;
+            }
+            .cuadro1, .cuadro2, .cuadro3 {
+                width: 100px;
+                height: 100px;
+                display: inline-block;
+                margin: 10px;
+                cursor: pointer;
+            }
+    
+            .cuadro1 {
+                background-color: #ffb6c1; /* Rosa pastel */
+            }
+    
+            .cuadro2 {
+                background-color: #98ff98; /* Menta */
+            }
+    
+            .cuadro3 {
+                background-color: #fffacd; /* Amarillo pastel */
+            }
+            body {
+                background-color: black;
+            }
+
+            h1 {
+                margin:20px;
+                color: white;
+                padding: 20px;
+                background-color: black;
+                font-size: 24px;
+            }
+
+            .ejercicio2 {
+                width: 550px;
+            }
+            textarea {
+                margin-left: 40px;
+                margin-right: 40px;
+                padding: 24px;
+                width:100%
+            }
+
+            .contador{
+                background-color: white;
+                padding: 12;
+                width: 250;
+                margin: 12px 40px;
+                font-weight: bolder;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                float: left;
+            }
+
+            .ejercicio3 {
+                width: 100%;
+                float: left;
+                margin-left: 40px;
+                margin-right: 40px;
+            }
+
+            .tabla {
+                margin: 24px 0px 24px 80px;
+                background-color: white;
+                width:fit-content;
+            }
+
+            h2 {
+                color: white;
+                font-size: 16px;
+                margin: 0px 0px 0px 80px;
+            }
+
+            .botones {
+                margin-left: 80px;
+            }
+
+            button {
+                padding: 12px;
+                font-family: sans-serif;
+                font-weight: bolder;
+                margin-bottom: 80px;
+            }
+        </style>
+    </head>
+    
+</head>
+
+<body>
+
+    <section class="ejercicio1">
+        <h1>Ejercicio 1</h1>
+        <div class="cuadros">
+            <div class="cuadro1"></div>
+            <div class="cuadro2"></div>
+            <div class="cuadro3"></div>
+         </div>
+    </section>
+        
+    <section class="ejercicio2">
+        <h1>Ejercicio 2</h1>
+        <textarea id="miTextarea" rows="4" cols="50" placeholder="Escribe aquí..."></textarea>
+        <div class="contador">
+            <p class="caracteres">Caracteres: <span id="contador">0</span></p>
+        </div>
+    </section>
+
+    <section class="ejercicio3">
+        <div class="titulo"><h1>Ejercicio 3</h1>
+        </div>
+        <h2 id="titulo2">Lista de todos los alumnos</h2>
+        
+        <div class="tabla">
+                <table id="tablaAlumnos" border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Nota</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se llenará la lista de alumnos -->
+                </tbody>
+            </table>
+        </div>
+        <div class="botones">
+            <button id="mostrarAprobados">Mostrar alumnos aprobados</button>
+            <button id="mostrarTodos">Mostrar todos los alumnos</button>
+        </div>
+        
+    </section>
+
+    <script>
+
+    const section = document.querySelector('.ejercicio1');
+   
+    // Cuadro 1 //
+    document.querySelector('.cuadro1').addEventListener('click', function() {
+            section.style.backgroundColor = '#ffb6c1';
+        });
+    // Cuadro 2 //
+    document.querySelector('.cuadro2').addEventListener('click', function() {
+            section.style.backgroundColor = '#98ff98'; // Menta
+        });
+    // Cuadro 3 //
+    document.querySelector('.cuadro3').addEventListener('click', function() {
+            section.style.backgroundColor = '#fffacd'; // Amarillo pastel
+        });
+
+    const textarea = document.getElementById('miTextarea');
+    const contador = document.getElementById('contador');
+
+    textarea.addEventListener('input', function() {
+
+        contador.textContent = textarea.value.length;
+        });
+
+    
+    var alumnos = [
+        { nombre: 'Juan Gomez', nota: 7 },
+        { nombre: 'Pedro Rodriguez', nota: 4 },
+        { nombre: 'Roxana García', nota: 8 },
+        { nombre: 'Luciano Lopez', nota: 5 },
+        { nombre: 'Fernanda Gimenez', nota: 6 },
+        { nombre: 'Florencia Martinez', nota: 10 },
+        { nombre: 'Raul Sanchez', nota: 7 },
+        { nombre: 'Sandra Figueroa', nota: 8 }
+    ];
+
+    // Función para renderizar la tabla
+    function renderizarTabla(alumnos) {
+        var tbody = document.querySelector('#tablaAlumnos tbody');
+        tbody.innerHTML = '';
+        alumnos.forEach(function(alumno) {
+            var fila = document.createElement('tr');
+            var celdaNombre = document.createElement('td');
+            celdaNombre.textContent = alumno.nombre;
+            var celdaNota = document.createElement('td');
+            celdaNota.textContent = alumno.nota;
+            fila.appendChild(celdaNombre);
+            fila.appendChild(celdaNota);
+            tbody.appendChild(fila);
+        });
+    }
+
+    // Mostrar todos los alumnos al cargar la página
+    renderizarTabla(alumnos);
+
+    // Botón para mostrar alumnos aprobados
+    document.getElementById('mostrarAprobados').addEventListener('click', function() {
+        var alumnosAprobados = alumnos.filter(function(alumno) {
+            return alumno.nota >= 7;
+        });
+        renderizarTabla(alumnosAprobados);
+        document.getElementById('titulo2').textContent = 'Lista de alumnos aprobados';
+    });
+
+    // Botón para mostrar todos los alumnos
+    document.getElementById('mostrarTodos').addEventListener('click', function() {
+        renderizarTabla(alumnos);
+        document.getElementById('titulo2').textContent = 'Lista de todos los alumnos';
+    });
+
+
+    </script>
+</body>
+</html>
